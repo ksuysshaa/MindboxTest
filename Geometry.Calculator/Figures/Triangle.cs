@@ -1,6 +1,6 @@
 namespace Geometry.Figures;
 
-public class Triangle: Figure
+public class Triangle: IFigure
 {
     private readonly double _firstSide;
 
@@ -33,7 +33,7 @@ public class Triangle: Figure
         return Math.Pow((perimeter - maxSide - minSide), 2) + Math.Pow(minSide, 2) == Math.Pow(maxSide, 2);
     }
 
-    public override double CalculateArea()
+    public double CalculateArea()
     {
         var halfPerimetr = (_firstSide + _secondSide + _thirdSide) / 2;
         var area = Math.Sqrt(halfPerimetr * (halfPerimetr - _firstSide)

@@ -12,7 +12,7 @@ public class CircleTests
         const double radius = 5;
         
         // Act
-        Figure circle = new Circle(radius);
+        IFigure circle = new Circle(radius);
         
         // Assert
         Assert.IsNotNull(circle);
@@ -26,7 +26,7 @@ public class CircleTests
         const double radius = -5;
         
         // Act
-        Figure circle = new Circle(radius);
+        IFigure circle = new Circle(radius);
         
         // No assert is needed, the ExpectedException attribute will handle the test
     }
@@ -37,7 +37,7 @@ public class CircleTests
         // Assert
         const double radius = 5;
         const double expectedArea = Math.PI * radius * radius;
-        Figure circle = new Circle(radius);
+        IFigure circle = new Circle(radius);
         
         // Act
         var actualArea = circle.CalculateArea();

@@ -1,6 +1,6 @@
 namespace Geometry;
 
-public abstract class Figure
+public interface IFigure
 {
-    public abstract double CalculateArea();
+    public double CalculateArea();
 }
