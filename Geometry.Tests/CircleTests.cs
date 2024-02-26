@@ -20,7 +20,7 @@ public class CircleTests
     
     [TestMethod]
     [ExpectedException(typeof(ArgumentException), "Radius must be non-negative.")]
-    public void Ctor_NegativeRadius_ThrowsArgumentException()
+    public void Ctor_InvalidRadius_ThrowsArgumentException()
     {
         // Assert
         const double radius = -5;

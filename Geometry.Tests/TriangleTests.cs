@@ -14,7 +14,7 @@ public class TriangleTests
         const double thirdSide = 5;
         
         // Act
-        Figure triangle = new Triangle(firstSide, secondSide, thirdSide);
+        IFigure triangle = new Triangle(firstSide, secondSide, thirdSide);
         
         // Assert
         Assert.IsNotNull(triangle);
@@ -22,7 +22,7 @@ public class TriangleTests
     
     [TestMethod]
     [ExpectedException(typeof(ArgumentException), "First side must be positive")]
-    public void Ctor_NegativeFirstSide_ThrowsArgumentException()
+    public void Ctor_InvalidFirstSide_ThrowsArgumentException()
     {
         // Arrange
         const double firstSide = -3;
@@ -30,14 +30,14 @@ public class TriangleTests
         const double thirdSide = 5;
         
         // Act
-        Figure triangle = new Triangle(firstSide, secondSide, thirdSide);
+        IFigure triangle = new Triangle(firstSide, secondSide, thirdSide);
         
         // No assert is needed, the ExpectedException attribute will handle the test
     }
     
     [TestMethod]
     [ExpectedException(typeof(ArgumentException), "Second side must be positive")]
-    public void Ctor_NegativeSecondSide_ThrowsArgumentException()
+    public void Ctor_InvalidSecondSide_ThrowsArgumentException()
     {
         // Arrange
         const double firstSide = 3;
@@ -45,14 +45,14 @@ public class TriangleTests
         const double thirdSide = 5;
         
         // Act
-        Figure triangle = new Triangle(firstSide, secondSide, thirdSide);
+        IFigure triangle = new Triangle(firstSide, secondSide, thirdSide);
         
         // No assert is needed, the ExpectedException attribute will handle the test
     }
     
     [TestMethod]
     [ExpectedException(typeof(ArgumentException), "Third side must be positive")]
-    public void Ctor_NegativeThirdSide_ThrowsArgumentException()
+    public void Ctor_InvalidThirdSide_ThrowsArgumentException()
     {
         // Arrange
         const double firstSide = 3;
@@ -60,20 +60,20 @@ public class TriangleTests
         const double thirdSide = -5;
         
         // Act
-        Figure triangle = new Triangle(firstSide, secondSide, thirdSide);
+        IFigure triangle = new Triangle(firstSide, secondSide, thirdSide);
         
         // No assert is needed, the ExpectedException attribute will handle the test
     }
     
     [TestMethod]
-    public void CalculateArea_ValidSides_ReturnsCorrectArea()
+    public void CalculateArea_ValidSides_ReturnsArea()
     {
         // Arrange
         const double firstSide = 3;
         const double secondSide = 4;
         const double thirdSide = 5;
         const double expectedArea = 6;
-        Figure triangle = new Triangle(firstSide, secondSide, thirdSide);
+        IFigure triangle = new Triangle(firstSide, secondSide, thirdSide);
         
         // Act
         var actualArea = triangle.CalculateArea();
